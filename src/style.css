@@ -14,6 +14,7 @@ body {
     box-sizing: inherit;
 }
 
+
 .panels {
     min-height: 100vh;
     overflow: hidden;
@@ -48,7 +49,6 @@ body {
 .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
 .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
 
-
 .panel > * {
     flex: 1;
     
@@ -61,24 +61,6 @@ body {
     align-items: center;    
 }
 
-
-/* ==================
-Hide small paragraphs
-=====================
-*/
-.panel *:first-child {
-    /*background: yellow;*/
-    transform: translateY(-100%);
-}
-.panel *:last-child {
-    transform: translateY(100%);
-}
-.active *:first-child, .active *:last-child {
-    transform: translateY(0);
-}
-
-
-
 .panel p {
     text-transform: uppercase;
     font-family: 'Amatic SC', cursive;
@@ -86,16 +68,28 @@ Hide small paragraphs
     font-size: 2em;
 }
 
+.panel *:first-child {
+    transform: translateY(-100%);
+}
+
+.panel *:last-child {
+    transform: translateY(100%);
+}
+
 .panel p:nth-child(2) {
     font-size: 4em;
 }
+
 
 .panel.open {
     font-size: 40px;
     flex: 3;
 }
 
-.cta {
-    color: white;
-    text-decoration: none;
+.active *:first-child {
+    transform: translateY(0);
+}
+
+.active *:last-child {
+    transform: translateY(0);
 }
